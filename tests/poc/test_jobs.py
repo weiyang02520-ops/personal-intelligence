@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import os
 import time
 
 from apps.core.database import Database
 from apps.core.jobs import JobService
 from apps.core.models import JobRecord
+import pytest
 
 
 def make_jobs(tmp_path, lease_seconds=2):
@@ -56,3 +58,36 @@ def test_run_once_retries_failed_worker_without_duplicate_claim(tmp_path):
     time.sleep(0.06)
     assert jobs.run_once(lambda job: calls.append(job.id)) is True
     assert len(calls) == 2 and calls[0] == calls[1]
+
+
+@pytest.mark.integration
+def test_postgresql_job_recovery_across_service_instances():
+    url = os.getenv("POC_DATABASE_URL")
+    if not url or not url.startswith("postgresql"):
+        pytest.skip("POC_DATABASE_URL is not a PostgreSQL URL")
+    db = Database(url)
+    db.create_schema()
+    worker_a = JobService(db, lease_seconds=0)
+    job_id = worker_a.enqueue("postgres-research")
+    claimed = worker_a.claim_next()
+    assert claimed is not None and claimed.id == job_id
+    assert worker_a.heartbeat(job_id) is True
+
+    # Worker A stops after heartbeat. Worker B is a separate service lifecycle
+    # using the same PostgreSQL state, not the same in-memory worker object.
+    time.sleep(0.01)
+    worker_b = JobService(db, lease_seconds=0)
+    assert worker_b.recover_stale() == 1
+    recovered = worker_b.claim_next()
+    assert recovered is not None and recovered.id == job_id and recovered.attempts == 2
+    worker_b.fail(job_id, "retryable worker stop", retry=True)
+    time.sleep(0.06)
+
+    worker_c = JobService(db, lease_seconds=0)
+    retried = worker_c.claim_next()
+    assert retried is not None and retried.id == job_id and retried.attempts == 3
+    worker_c.complete(job_id)
+    assert worker_c.claim_next() is None
+    with db.session() as session:
+        row = session.get(JobRecord, job_id)
+        assert row.status == "COMPLETED" and row.attempts == 3

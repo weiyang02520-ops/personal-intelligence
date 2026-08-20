@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from .errors import SecretNotFound
+
 
 class InMemorySecretStore:
     """Reversible PoC store; values never enter API models, events or database rows."""
@@ -11,7 +13,10 @@ class InMemorySecretStore:
         self._values[name] = value
 
     def get(self, name: str) -> str:
-        return self._values[name]
+        try:
+            return self._values[name]
+        except KeyError as exc:
+            raise SecretNotFound(name) from exc
 
     def has(self, name: str) -> bool:
         return name in self._values

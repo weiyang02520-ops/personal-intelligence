@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 import time
-from dataclasses import asdict
 from typing import Iterator
 
 from fastapi import FastAPI, Query, Request
@@ -10,8 +9,9 @@ from fastapi.responses import JSONResponse, StreamingResponse
 from pydantic import BaseModel, Field
 
 from .database import Database
-from .errors import PocError, ValidationError
+from .errors import PocError
 from .lifecycle import LifecycleService
+from .secrets import InMemorySecretStore
 
 
 class CreateResearchRequest(BaseModel):
@@ -29,6 +29,22 @@ def _response(row) -> ResearchResponse:
     return ResearchResponse(id=row.id, status=row.status, created_at=row.created_at.isoformat(), updated_at=row.updated_at.isoformat())
 
 
+def public_event_stream(service: LifecycleService, research_id: str, after_sequence: int = 0) -> Iterator[str]:
+    """Yield the PI-owned public SSE stream from a replay cursor."""
+    cursor = after_sequence
+    deadline = time.monotonic() + 10
+    while time.monotonic() < deadline:
+        rows = service.list_events(research_id, cursor)
+        for row in rows:
+            cursor = row.sequence
+            payload = {"type": row.event_type, "sequence": row.sequence, "data": json.loads(row.payload)}
+            yield f"id: {cursor}\nevent: public\ndata: {json.dumps(payload, sort_keys=True)}\n\n"
+        current = service.get_research(research_id)
+        if current.status in {"COMPLETED", "CANCELLED", "FAILED"} and not service.list_events(research_id, cursor):
+            break
+        time.sleep(0.02)
+
+
 def create_app(database_url: str | None = None) -> FastAPI:
     database = Database(database_url)
     database.create_schema()
@@ -36,6 +52,7 @@ def create_app(database_url: str | None = None) -> FastAPI:
     app = FastAPI(title="Personal Intelligence Physical Architecture PoC")
     app.state.database = database
     app.state.lifecycle = service
+    app.state.secret_store = InMemorySecretStore()
 
     @app.exception_handler(PocError)
     async def poc_error_handler(_: Request, exc: PocError):
@@ -51,21 +68,7 @@ def create_app(database_url: str | None = None) -> FastAPI:
 
     @app.get("/research/{research_id}/events")
     def events(research_id: str, after_sequence: int = Query(default=0, ge=0)):
-        def stream() -> Iterator[str]:
-            cursor = after_sequence
-            deadline = time.monotonic() + 10
-            while time.monotonic() < deadline:
-                rows = service.list_events(research_id, cursor)
-                for row in rows:
-                    cursor = row.sequence
-                    payload = {"type": row.event_type, "sequence": row.sequence, "data": json.loads(row.payload)}
-                    yield f"id: {cursor}\nevent: public\ndata: {json.dumps(payload, sort_keys=True)}\n\n"
-                current = service.get_research(research_id)
-                if current.status in {"COMPLETED", "CANCELLED", "FAILED"} and not service.list_events(research_id, cursor):
-                    break
-                time.sleep(0.02)
-
-        return StreamingResponse(stream(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
+        return StreamingResponse(public_event_stream(service, research_id, after_sequence), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
 
     return app
 

@@ -18,6 +18,11 @@ class NotFoundError(PocError):
         super().__init__("NOT_FOUND", message, 404)
 
 
+class SecretNotFound(PocError):
+    def __init__(self, name: str):
+        super().__init__("SECRET_NOT_FOUND", f"secret {name!r} was not found", 404)
+
+
 class ValidationError(PocError):
     def __init__(self, message: str):
         super().__init__("VALIDATION_ERROR", message, 422)
