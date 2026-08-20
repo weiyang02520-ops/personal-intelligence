@@ -4,7 +4,7 @@ Task ID: TASK-POC-002
 Title: Core API research lifecycle spike  
 Milestone: PoC  
 Priority: P0  
-Status: READY  
+Status: COMPLETE
 Depends On: TASK-POC-001  
 Blocks: TASK-POC-003..005, TASK-POC-010
 
@@ -78,10 +78,10 @@ Need to resolve final state semantics, database ADR, or production migration pol
 
 ## Execution Result
 
-Status: PENDING  
-Evidence: —  
-Artifacts Changed: —  
-Acceptance Result: —  
-Verification: —  
-Known Limitations: —  
-Discovered Delta: —
+Status: COMPLETE
+Evidence: `apps/core/api.py`, lifecycle/runtime modules, SQLite and isolated PostgreSQL tests
+Artifacts Changed: FastAPI research lifecycle, FakeRuntime, database models
+Acceptance Result: PASS
+Verification: `python -m pytest -q tests/poc/test_lifecycle.py tests/poc/test_postgres_integration.py`
+Known Limitations: `RUNNING_LIKE` is deliberately PoC-only; no Discovery or Product research feature is included.
+Discovered Delta: Runtime completion is asynchronous and remains behind the runtime boundary.

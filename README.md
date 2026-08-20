@@ -2,9 +2,9 @@
 
 Personal Intelligence 是一个正在设计中的个人智能发现与深度研究系统。
 
-当前阶段：Architecture & Product Design
+当前阶段：Physical Architecture PoC — evidence ready for External Review
 
-项目暂时不进入正式编码阶段。
+项目暂时不进入正式业务编码阶段；当前仅完成已授权的 Physical Architecture PoC。
 
 目标是先完成：
 1. 产品需求设计
@@ -29,4 +29,4 @@ Personal Intelligence 是一个正在设计中的个人智能发现与深度研�
 - Current gate: `POC-GATE-001 / EXTERNAL REVIEW REQUIRED`
 - M0 readiness: `COMPLETE_WITH_NOTES`
 
-本仓库当前只承载设计、审计和长期连续性资料；没有开始 Product Core、PoC 或 M1–M4 业务实现。
+本仓库当前承载设计、审计、PoC 证据和长期连续性资料；没有开始 Product Core 或 M1–M4 业务实现。当前 gate 为 `POC-GATE-001` External Review，Architecture Freeze 与 M1 均未授权。

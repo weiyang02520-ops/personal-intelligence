@@ -25,6 +25,9 @@ dist/
 build/
 .next/
 .venv/
+.poc/
+poc.db
+*.db
 venv/
 __pycache__/
 .pytest_cache/

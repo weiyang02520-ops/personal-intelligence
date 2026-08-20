@@ -4,7 +4,7 @@ Task ID: TASK-POC-007
 Title: FetchGateway security spike  
 Milestone: PoC  
 Priority: P0  
-Status: READY  
+Status: COMPLETE
 Depends On: TASK-POC-001  
 Blocks: TASK-POC-012
 
@@ -78,10 +78,10 @@ Cannot establish safe resolver behavior, need unsafe network access or security 
 
 ## Execution Result
 
-Status: PENDING  
-Evidence: —  
-Artifacts Changed: —  
-Acceptance Result: —  
-Verification: —  
-Known Limitations: —  
-Discovered Delta: —
+Status: COMPLETE
+Evidence: `apps/core/fetch.py`, `tests/poc/test_fetch.py`, `docs/audit/poc/POC_SECURITY_MATRIX.md`
+Artifacts Changed: bounded FetchGateway with URL/DNS/redirect validation
+Acceptance Result: PASS
+Verification: `python -m pytest -q tests/poc/test_fetch.py`
+Known Limitations: Production egress isolation and DNS rebinding controls remain open.
+Discovered Delta: SSRF protection is a gateway concern and does not belong in the runtime adapter.

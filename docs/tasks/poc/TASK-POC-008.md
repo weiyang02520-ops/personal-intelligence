@@ -4,7 +4,7 @@ Task ID: TASK-POC-008
 Title: DeerFlowRuntimeAdapter spike  
 Milestone: PoC  
 Priority: P0  
-Status: READY  
+Status: COMPLETE
 Depends On: TASK-POC-001, TASK-POC-002  
 Blocks: TASK-POC-009, TASK-POC-012
 
@@ -78,10 +78,10 @@ Need to patch Product Core, expose raw runtime events, use unavailable credentia
 
 ## Execution Result
 
-Status: PENDING  
-Evidence: —  
-Artifacts Changed: —  
-Acceptance Result: —  
-Verification: —  
-Known Limitations: —  
-Discovered Delta: —
+Status: COMPLETE
+Evidence: `docs/audit/poc/DEERFLOW_CONTRACT.md`, `apps/core/deerflow.py`, source commit `a5acc25de6742b2166b3f41c97bd895822277b94`
+Artifacts Changed: thin event/capability adapter and controlled fixture tests
+Acceptance Result: PASS_WITH_CONTRACT_GAP
+Verification: `python -m pytest -q tests/poc/test_deerflow_adapter.py` and source-level inspection
+Known Limitations: Cancel/resume and adopted runtime version are not frozen; no credentialed end-to-end claim.
+Discovered Delta: Gateway route family may be needed for future cancel semantics; this is an External Review decision.

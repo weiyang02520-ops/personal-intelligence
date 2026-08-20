@@ -4,7 +4,7 @@ Task ID: TASK-POC-012
 Title: Physical Architecture Review  
 Milestone: PoC  
 Priority: P0  
-Status: NOT_READY  
+Status: READY_FOR_EXTERNAL_REVIEW
 Depends On: TASK-POC-001..011 completed or explicitly blocked  
 Blocks: POC-GATE-001
 
@@ -78,10 +78,10 @@ Self-approval requested, unresolved security incident, remote verification failu
 
 ## Execution Result
 
-Status: PENDING  
-Evidence: —  
-Artifacts Changed: —  
-Acceptance Result: —  
-Verification: —  
-Known Limitations: —  
-Discovered Delta: —
+Status: READY_FOR_EXTERNAL_REVIEW
+Evidence: `docs/gates/POC-GATE-001.md`, `docs/audit/poc/DEERFLOW_CONTRACT.md`, `docs/audit/poc/POC_SECURITY_MATRIX.md`
+Artifacts Changed: Physical Architecture PoC evidence packet
+Acceptance Result: READY_WITH_KNOWN_GAPS; External Review must decide the gate
+Verification: full PoC test suite, frontend build, diff/secret scans, remote verification pending final push
+Known Limitations: This task cannot self-mark POC-GATE-001 PASS and does not authorize M1.
+Discovered Delta: DeerFlow cancel/resume and runtime version remain explicit review items.

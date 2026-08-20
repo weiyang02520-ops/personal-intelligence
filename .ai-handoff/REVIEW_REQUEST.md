@@ -13,7 +13,7 @@ Remote Verified At Baseline: YES
 1. Confirm repository identity and PoC review baseline.
 2. Review `docs/tasks/poc/` and PoC source/test evidence.
 3. Review `docs/gates/POC-GATE-001.md` and the PoC slice in `docs/IMPLEMENTATION_MAP.md`.
-4. Decide whether Architecture Foundation Freeze v1 may be accepted; M1 remains unauthorized until explicit review.
+4. Decide whether the PoC gate is accepted and whether a later Architecture Foundation Freeze discussion may begin; M1 remains unauthorized.
 
 ## Required reviewer verdict
 

@@ -4,7 +4,7 @@ Task ID: TASK-POC-009
 Title: Runtime tool bridge spike  
 Milestone: PoC  
 Priority: P0  
-Status: READY  
+Status: COMPLETE
 Depends On: TASK-POC-006, TASK-POC-008  
 Blocks: TASK-POC-012
 
@@ -78,10 +78,10 @@ Provider key exposure, silent disallowed execution, or need to weaken security c
 
 ## Execution Result
 
-Status: PENDING  
-Evidence: —  
-Artifacts Changed: —  
-Acceptance Result: —  
-Verification: —  
-Known Limitations: —  
-Discovered Delta: —
+Status: COMPLETE
+Evidence: `apps/core/bridge.py`, SearchToolBridge tests, security matrix
+Artifacts Changed: allowlisted runtime-to-PI search bridge
+Acceptance Result: PASS
+Verification: `python -m pytest -q tests/poc/test_search.py`
+Known Limitations: Only `search` is proven; policy grants and tool result schemas remain PoC-level.
+Discovered Delta: Runtime cannot receive provider credentials through this bridge.

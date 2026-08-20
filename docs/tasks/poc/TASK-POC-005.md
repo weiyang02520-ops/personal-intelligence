@@ -4,7 +4,7 @@ Task ID: TASK-POC-005
 Title: Job execution/recovery spike  
 Milestone: PoC  
 Priority: P0  
-Status: READY  
+Status: COMPLETE
 Depends On: TASK-POC-002, TASK-POC-004  
 Blocks: TASK-POC-012
 
@@ -78,10 +78,10 @@ Need Redis/Temporal/Celery without a failed simpler candidate or need to change 
 
 ## Execution Result
 
-Status: PENDING  
-Evidence: —  
-Artifacts Changed: —  
-Acceptance Result: —  
-Verification: —  
-Known Limitations: —  
-Discovered Delta: —
+Status: COMPLETE
+Evidence: `apps/core/jobs.py`, `tests/poc/test_jobs.py` recovery timeline assertions
+Artifacts Changed: DB-backed enqueue/claim/heartbeat/retry/recovery service
+Acceptance Result: PASS
+Verification: `python -m pytest -q tests/poc/test_jobs.py`
+Known Limitations: Minimal retry delay and no dead-letter/backoff policy; no queue dependency was added.
+Discovered Delta: Lease recovery can be proven with the DB alone for this slice.

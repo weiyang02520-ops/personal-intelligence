@@ -4,7 +4,7 @@ Task ID: TASK-POC-004
 Title: PostgreSQL transaction + outbox spike  
 Milestone: PoC  
 Priority: P0  
-Status: READY  
+Status: COMPLETE
 Depends On: TASK-POC-002  
 Blocks: TASK-POC-012
 
@@ -78,10 +78,10 @@ Need to change Domain event semantics or accept database architecture.
 
 ## Execution Result
 
-Status: PENDING  
-Evidence: —  
-Artifacts Changed: —  
-Acceptance Result: —  
-Verification: —  
-Known Limitations: —  
-Discovered Delta: —
+Status: COMPLETE
+Evidence: `apps/core/events.py`, transaction rollback and idempotency tests
+Artifacts Changed: Research/outbox atomic write path and processed-event uniqueness
+Acceptance Result: PASS
+Verification: `python -m pytest -q tests/poc/test_outbox.py` plus PostgreSQL integration run
+Known Limitations: Publisher transport and broker are intentionally not selected.
+Discovered Delta: Duplicate delivery protection is consumer-local in this PoC.

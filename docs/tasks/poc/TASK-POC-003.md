@@ -4,7 +4,7 @@ Task ID: TASK-POC-003
 Title: Public SSE event spike  
 Milestone: PoC  
 Priority: P0  
-Status: READY  
+Status: COMPLETE
 Depends On: TASK-POC-002  
 Blocks: TASK-POC-010, TASK-POC-012
 
@@ -78,10 +78,10 @@ Need to expose runtime events directly or change public event semantics.
 
 ## Execution Result
 
-Status: PENDING  
-Evidence: —  
-Artifacts Changed: —  
-Acceptance Result: —  
-Verification: —  
-Known Limitations: —  
-Discovered Delta: —
+Status: COMPLETE
+Evidence: `apps/core/events.py`, SSE endpoint, `tests/poc/test_sse.py`
+Artifacts Changed: PI-owned public event projection and replay-by-sequence SSE
+Acceptance Result: PASS
+Verification: `python -m pytest -q tests/poc/test_sse.py`
+Known Limitations: In-process streaming is sufficient for PoC evidence; broker/fanout selection remains open.
+Discovered Delta: Browser reconnect is represented by `after_sequence`; production Last-Event-ID mapping remains open.

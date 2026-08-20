@@ -19,7 +19,7 @@ Reports are in `docs/audit/`:
 - `OPEN_TBDS.md`
 - `M0_READINESS.md`
 
-Result: `M0 COMPLETE_WITH_NOTES; POC IN PROGRESS`
+Result: `M0 COMPLETE_WITH_NOTES; POC EVIDENCE READY`
 
 ## Agent Discovered Delta
 
@@ -38,6 +38,13 @@ Workflow SHA256: `40C6DBA5BE6A11A0082DF2A23AE4D9A8446D81C84946AA71C7094FE4BDCBB0
 2. PoC code may be simplified but contract semantics must be real.
 3. PoC evidence may propose architecture candidates but may not accept ADRs or Architecture Freeze.
 4. Stop at POC-GATE-001 External Review; do not enter M1.
+
+## PoC completion checkpoint
+
+- `TASK-POC-001..011`: COMPLETE with task-level evidence.
+- `TASK-POC-012`: READY_FOR_EXTERNAL_REVIEW.
+- Gate recommendation: `READY_WITH_KNOWN_GAPS`; this is not a self-approval.
+- Architecture Freeze: NO; M1: NOT AUTHORIZED.
 
 ## Next Action
 

@@ -4,7 +4,7 @@ Task ID: TASK-POC-006
 Title: SearchGateway spike  
 Milestone: PoC  
 Priority: P0  
-Status: READY  
+Status: COMPLETE
 Depends On: TASK-POC-001  
 Blocks: TASK-POC-009, TASK-POC-012
 
@@ -78,10 +78,10 @@ Need a new secret, provider choice, API contract change or dependency expansion.
 
 ## Execution Result
 
-Status: PENDING  
-Evidence: —  
-Artifacts Changed: —  
-Acceptance Result: —  
-Verification: —  
-Known Limitations: —  
-Discovered Delta: —
+Status: COMPLETE
+Evidence: `apps/core/search.py`, `tests/poc/test_search.py`, `IF-SEARCH-001` types
+Artifacts Changed: SearchGateway, fake provider, GitHub REST adapter
+Acceptance Result: PASS_WITH_LIMITATION
+Verification: `python -m pytest -q tests/poc/test_search.py`; live network path remains optional and credential-free by default
+Known Limitations: GitHub is not the final general-web provider; no live token was committed or required.
+Discovered Delta: Provider credentials are owned by the PI-side adapter, not runtime.

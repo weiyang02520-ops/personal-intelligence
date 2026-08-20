@@ -4,7 +4,7 @@ Task ID: TASK-POC-001
 Title: Initialize architecture skeleton  
 Milestone: PoC  
 Priority: P0  
-Status: READY  
+Status: COMPLETE
 Depends On: M0-GATE-001 PASS_WITH_NOTES  
 Blocks: TASK-POC-002..012
 
@@ -78,10 +78,10 @@ Architecture contradiction, required large dependency, need to change module bou
 
 ## Execution Result
 
-Status: PENDING  
-Evidence: —  
-Artifacts Changed: —  
-Acceptance Result: —  
-Verification: —  
-Known Limitations: —  
-Discovered Delta: —
+Status: COMPLETE
+Evidence: `apps/core/`, `tests/poc/test_skeleton.py`, import-rule output
+Artifacts Changed: PoC package skeleton, dependency manifest, import-boundary test
+Acceptance Result: PASS
+Verification: `python -m pytest -q tests/poc/test_skeleton.py`
+Known Limitations: Physical layout is a PoC candidate and is not frozen.
+Discovered Delta: DeerFlow and runtime version remain adapter-level, not Product Core decisions.

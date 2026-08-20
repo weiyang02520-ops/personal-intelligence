@@ -12,3 +12,5 @@
 - No Product Core, PoC or M1–M4 business code was added.
 - External Review returned `M0-GATE-001 PASS_WITH_NOTES`; Physical Architecture PoC authorized, M1 still forbidden.
 - Added TASK-POC-001..012 packets and PoC traceability slice.
+- Completed the authorized PoC implementation slice and task evidence for POC-001..011.
+- Prepared `POC-GATE-001` as `READY_WITH_KNOWN_GAPS` for External Review; did not self-accept the gate or start M1.

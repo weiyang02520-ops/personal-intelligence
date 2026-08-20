@@ -4,7 +4,7 @@ Task ID: TASK-POC-010
 Title: Frontend PI API spike  
 Milestone: PoC  
 Priority: P0  
-Status: READY  
+Status: COMPLETE
 Depends On: TASK-POC-002, TASK-POC-003  
 Blocks: TASK-POC-012
 
@@ -78,10 +78,10 @@ Need to expose runtime endpoint, add production UI system or add credentials.
 
 ## Execution Result
 
-Status: PENDING  
-Evidence: —  
-Artifacts Changed: —  
-Acceptance Result: —  
-Verification: —  
-Known Limitations: —  
-Discovered Delta: —
+Status: COMPLETE
+Evidence: `apps/web/`, `tests/poc/test_frontend_boundary.py`, Next.js build output
+Artifacts Changed: minimal Next.js page, PI API client, status polling and SSE listener
+Acceptance Result: PASS
+Verification: `npm install --no-audit --no-fund`; `npm run build`; `python -m pytest -q tests/poc/test_frontend_boundary.py`
+Known Limitations: No Product UI, auth, design system, or runtime-specific endpoint is included.
+Discovered Delta: Frontend boundary can remain PI API-only for the next review.
