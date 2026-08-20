@@ -19,7 +19,7 @@ Reports are in `docs/audit/`:
 - `OPEN_TBDS.md`
 - `M0_READINESS.md`
 
-Result: `M0 COMPLETE_WITH_NOTES; POC GATE CLOSURE IN PROGRESS`
+Result: `M0 COMPLETE_WITH_NOTES; POC GATE CLOSURE COMPLETE — READY FOR EXTERNAL REVIEW`
 
 ## Agent Discovered Delta
 
@@ -50,6 +50,15 @@ Workflow SHA256: `40C6DBA5BE6A11A0082DF2A23AE4D9A8446D81C84946AA71C7094FE4BDCBB0
 - `TASK-POC-001..011`: COMPLETE with task-level evidence.
 - `TASK-POC-012`: READY_FOR_EXTERNAL_REVIEW.
 - Previous gate recommendation `READY_WITH_KNOWN_GAPS` is superseded by External Review `CHANGES_REQUESTED`; corrected packet will be re-submitted.
+- Architecture Freeze: NO; M1: NOT AUTHORIZED.
+
+## Closure checkpoint
+
+- Corrected evidence is ready for External Review.
+- `TASK-POC-003/004/005`: PASS with direct reconnect/PostgreSQL evidence.
+- `TASK-POC-006`: PARTIAL because the canonical Search cancellation contract is absent; conflict is explicitly reported.
+- `TASK-POC-008`: PASS_WITH_LIMITATION; Gateway HTTP/SSE boundary and cancel contract verified, real model run not verified.
+- `TASK-POC-011`: PASS with runtime-generated multi-surface canary evidence.
 - Architecture Freeze: NO; M1: NOT AUTHORIZED.
 
 ## Next Action

@@ -1,6 +1,6 @@
 # STATUS
 
-Status: POC_GATE_CLOSURE_IN_PROGRESS — M0 PASS_WITH_NOTES; External Review CHANGES_REQUESTED
+Status: POC_READY_FOR_EXTERNAL_REVIEW — M0 PASS_WITH_NOTES; corrected evidence after CHANGES_REQUESTED
 
 Repository: weiyang02520-ops/personal-intelligence
 Visibility: PUBLIC
@@ -11,4 +11,4 @@ Remote Verified At Baseline: YES
 
 Blueprint Audit: COMPLETE DESIGN DRAFT / NOT FROZEN
 M0 Readiness: COMPLETE_WITH_NOTES
-Current Gate: POC-GATE-001 CLOSURE BATCH / EXTERNAL REVIEW REQUIRED
+Current Gate: POC-GATE-001 EXTERNAL REVIEW REQUIRED — corrected packet
