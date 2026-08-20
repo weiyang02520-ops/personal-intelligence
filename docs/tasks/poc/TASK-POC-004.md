@@ -79,9 +79,9 @@ Need to change Domain event semantics or accept database architecture.
 ## Execution Result
 
 Status: COMPLETE
-Evidence: `apps/core/events.py`, transaction rollback and idempotency tests
+Evidence: `apps/core/events.py`, `tests/poc/test_postgres_integration.py`
 Artifacts Changed: Research/outbox atomic write path and processed-event uniqueness
 Acceptance Result: PASS
-Verification: `python -m pytest -q tests/poc/test_outbox.py` plus PostgreSQL integration run
+Verification: PostgreSQL integration proves rollback leaves row counts unchanged and duplicate consumer/event delivery has one effect; SQLite fast tests retained
 Known Limitations: Publisher transport and broker are intentionally not selected.
-Discovered Delta: Duplicate delivery protection is consumer-local in this PoC.
+Discovered Delta: PostgreSQL Candidate A now has direct fault/idempotency evidence; duplicate delivery protection remains consumer-local.

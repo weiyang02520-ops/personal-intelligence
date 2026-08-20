@@ -14,3 +14,4 @@
 - Added TASK-POC-001..012 packets and PoC traceability slice.
 - Completed the authorized PoC implementation slice and task evidence for POC-001..011.
 - Prepared `POC-GATE-001` as `READY_WITH_KNOWN_GAPS` for External Review; did not self-accept the gate or start M1.
+- External Review returned `POC-GATE-001 CHANGES_REQUESTED`; started focused evidence closure without changing Architecture Freeze or M1 authorization.

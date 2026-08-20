@@ -17,8 +17,8 @@ Current Milestone: Physical Architecture PoC
 ## CURRENT PROJECT TRUTH
 
 - Current Phase: `PHYSICAL_ARCHITECTURE_POC`
-- Current Gate: `POC-GATE-001 / EXTERNAL REVIEW REQUIRED`
-- Implementation: `POC EVIDENCE READY — no production implementation`
+- Current Gate: `POC-GATE-001 / CLOSURE BATCH — EXTERNAL REVIEW REQUIRED`
+- Implementation: `POC GATE CLOSURE IN PROGRESS — no production implementation`
 - M0 Readiness: `COMPLETE_WITH_NOTES`
 - M0 External Review: `PASS_WITH_NOTES`
 - M1, M2, M3 and M4 business implementation remains unauthorized.
@@ -59,3 +59,4 @@ Stop when repository identity is uncertain, a required credential is missing, an
 
 - External Review verdict: `M0-GATE-001 PASS_WITH_NOTES`; Physical Architecture PoC authorized, Architecture Freeze and M1 not authorized.
 - Reviewed DeerFlow commit is pinned for audit; adopted runtime version remains NOT FROZEN.
+- External Review returned `POC-GATE-001 CHANGES_REQUESTED` at `e7f6d5c97a62b35cacfbabf713daa81f55aea001`; only focused evidence closure is authorized.

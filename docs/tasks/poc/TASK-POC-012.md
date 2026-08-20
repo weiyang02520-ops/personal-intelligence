@@ -79,9 +79,9 @@ Self-approval requested, unresolved security incident, remote verification failu
 ## Execution Result
 
 Status: READY_FOR_EXTERNAL_REVIEW
-Evidence: `docs/gates/POC-GATE-001.md`, `docs/audit/poc/DEERFLOW_CONTRACT.md`, `docs/audit/poc/POC_SECURITY_MATRIX.md`
-Artifacts Changed: Physical Architecture PoC evidence packet
+Evidence: `docs/gates/POC-GATE-001.md`, `docs/audit/poc/DEERFLOW_CONTRACT.md`, `docs/audit/poc/POC_SECURITY_MATRIX.md`, `docs/audit/poc/SEARCH_CANCELLATION_CONFLICT.md`
+Artifacts Changed: corrected Physical Architecture PoC evidence packet after External Review CHANGES_REQUESTED
 Acceptance Result: READY_WITH_KNOWN_GAPS; External Review must decide the gate
-Verification: full PoC test suite, frontend build, diff/secret scans, remote verification pending final push
-Known Limitations: This task cannot self-mark POC-GATE-001 PASS and does not authorize M1.
-Discovered Delta: DeerFlow cancel/resume and runtime version remain explicit review items.
+Verification: full PoC suite 36 passed with isolated PostgreSQL; Next.js build passed; `git diff --check`; secret scan passed
+Known Limitations: TASK-POC-006 remains PARTIAL due canonical contract conflict; real DeerFlow model execution is not verified; this task cannot self-mark POC-GATE-001 PASS or authorize M1.
+Discovered Delta: Gateway cancel contract is verified; resume and runtime version remain open and not frozen.

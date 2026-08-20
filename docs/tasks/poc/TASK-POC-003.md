@@ -79,9 +79,9 @@ Need to expose runtime events directly or change public event semantics.
 ## Execution Result
 
 Status: COMPLETE
-Evidence: `apps/core/events.py`, SSE endpoint, `tests/poc/test_sse.py`
-Artifacts Changed: PI-owned public event projection and replay-by-sequence SSE
+Evidence: `apps/core/api.py` public event stream, `tests/poc/test_sse.py`
+Artifacts Changed: PI-owned public event projection, deterministic disconnect harness and replay-by-sequence SSE
 Acceptance Result: PASS
-Verification: `python -m pytest -q tests/poc/test_sse.py`
-Known Limitations: In-process streaming is sufficient for PoC evidence; broker/fanout selection remains open.
-Discovered Delta: Browser reconnect is represented by `after_sequence`; production Last-Event-ID mapping remains open.
+Verification: `python -m pytest -q tests/poc/test_sse.py`; real first-frame disconnect → lifecycle completion → second endpoint connection with cursor
+Known Limitations: Broker/fanout selection and production Last-Event-ID mapping remain open.
+Discovered Delta: Reconnect semantics are proven at the PI endpoint boundary without exposing runtime DTOs.

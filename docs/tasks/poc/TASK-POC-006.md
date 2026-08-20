@@ -4,7 +4,7 @@ Task ID: TASK-POC-006
 Title: SearchGateway spike  
 Milestone: PoC  
 Priority: P0  
-Status: COMPLETE
+Status: PARTIAL
 Depends On: TASK-POC-001  
 Blocks: TASK-POC-009, TASK-POC-012
 
@@ -79,9 +79,9 @@ Need a new secret, provider choice, API contract change or dependency expansion.
 ## Execution Result
 
 Status: COMPLETE
-Evidence: `apps/core/search.py`, `tests/poc/test_search.py`, `IF-SEARCH-001` types
+Evidence: `apps/core/search.py`, `tests/poc/test_search.py`, `docs/audit/poc/SEARCH_CANCELLATION_CONFLICT.md`
 Artifacts Changed: SearchGateway, fake provider, GitHub REST adapter
-Acceptance Result: PASS_WITH_LIMITATION
-Verification: `python -m pytest -q tests/poc/test_search.py`; live network path remains optional and credential-free by default
-Known Limitations: GitHub is not the final general-web provider; no live token was committed or required.
-Discovered Delta: Provider credentials are owned by the PI-side adapter, not runtime.
+Acceptance Result: PARTIAL — cancellation requirement conflicts with canonical Blueprint; no unsupported API was invented
+Verification: `python -m pytest -q tests/poc/test_search.py`; normal/timeout/429/auth/no-result/provenance pass
+Known Limitations: Search cancellation semantics require Spec-owner decision; GitHub is not the final general-web provider; no live token was committed.
+Discovered Delta: Provider credentials are owned by the PI-side adapter, not runtime; Search cancel remains an open contract conflict.

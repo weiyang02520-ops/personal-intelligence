@@ -125,3 +125,12 @@
 - 推荐方案：B，符合 M0→PoC→M1 顺序。
 - 影响范围：Function Specs、Test Matrix、Task readiness。
 
+## SC-012 — TASK-POC-006 要求 Search cancellation，但 canonical contract 未定义
+
+- 冲突位置：`docs/tasks/poc/TASK-POC-006.md` Required Tests/Errors，与 `docs/plan(4).md` Search 模块和 Runtime cancellation 定义。
+- 受影响：TASK-POC-006、SearchGateway、IF-SEARCH-001（当前只在 PoC task 中引用）、Runtime/Research cancellation boundary。
+- 实际问题：Blueprint 明确 Search 负责 timeout/retry/provider degradation，取消链路属于 `cancelResearch` / `cancelExecution`；直接检索未发现 canonical `IF-SEARCH-001` cancellation semantics。
+- 阻塞原因：如果 Coding Agent自行加入 Search cancellation token/error，会改变未冻结 Public/Internal contract；如果忽略 Task 要求，又会伪造完成证据。
+- 最小修改：由架构/Spec owner 选择“删除 Search cancellation Task 要求”或“补充 canonical Search execution cancellation contract”。
+- 当前执行：不发明 API；`docs/audit/poc/SEARCH_CANCELLATION_CONFLICT.md` 记录冲突，TASK-POC-006 保持 `PARTIAL`。
+- 影响范围：Search contract、Task acceptance、POC-GATE-001；不改变 Product Core，不授权 Architecture Freeze/M1。

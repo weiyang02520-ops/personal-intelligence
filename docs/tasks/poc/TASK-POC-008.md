@@ -79,9 +79,9 @@ Need to patch Product Core, expose raw runtime events, use unavailable credentia
 ## Execution Result
 
 Status: COMPLETE
-Evidence: `docs/audit/poc/DEERFLOW_CONTRACT.md`, `apps/core/deerflow.py`, source commit `a5acc25de6742b2166b3f41c97bd895822277b94`
-Artifacts Changed: thin event/capability adapter and controlled fixture tests
-Acceptance Result: PASS_WITH_CONTRACT_GAP
-Verification: `python -m pytest -q tests/poc/test_deerflow_adapter.py` and source-level inspection
-Known Limitations: Cancel/resume and adopted runtime version are not frozen; no credentialed end-to-end claim.
-Discovered Delta: Gateway route family may be needed for future cancel semantics; this is an External Review decision.
+Evidence: `docs/audit/poc/DEERFLOW_CONTRACT.md`, `apps/core/deerflow.py`, `tests/poc/test_deerflow_adapter.py`, source commit `a5acc25de6742b2166b3f41c97bd895822277b94`
+Artifacts Changed: Gateway HTTP/SSE adapter, embedded-boundary rejection fixture and controlled transport tests
+Acceptance Result: PASS_WITH_LIMITATION — Gateway boundary/cancel contract verified; real model run not verified
+Verification: `python -m pytest -q tests/poc/test_deerflow_adapter.py`; source route inspection for start/status/events/result/cancel/capabilities
+Known Limitations: Resume and adopted runtime version are not frozen; `REAL_DEERFLOW_MODEL_RUN: NOT VERIFIED — CREDENTIAL REQUIRED`.
+Discovered Delta: Gateway is the preferred external boundary for process/failure isolation and cancel lifecycle; no upstream patch or fork was made.

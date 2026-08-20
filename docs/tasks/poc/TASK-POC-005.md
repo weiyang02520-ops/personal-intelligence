@@ -79,9 +79,9 @@ Need Redis/Temporal/Celery without a failed simpler candidate or need to change 
 ## Execution Result
 
 Status: COMPLETE
-Evidence: `apps/core/jobs.py`, `tests/poc/test_jobs.py` recovery timeline assertions
+Evidence: `apps/core/jobs.py`, `tests/poc/test_jobs.py`, PostgreSQL integration job lifecycle
 Artifacts Changed: DB-backed enqueue/claim/heartbeat/retry/recovery service
 Acceptance Result: PASS
-Verification: `python -m pytest -q tests/poc/test_jobs.py`
+Verification: SQLite fast tests plus PostgreSQL integration prove enqueue/claim/heartbeat/retry/stale recovery/complete across worker service instances
 Known Limitations: Minimal retry delay and no dead-letter/backoff policy; no queue dependency was added.
-Discovered Delta: Lease recovery can be proven with the DB alone for this slice.
+Discovered Delta: DB-backed Job Candidate remains viable for PoC; no final queue architecture accepted.

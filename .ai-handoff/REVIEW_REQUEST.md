@@ -4,15 +4,15 @@ Review Gate: POC-GATE-001 External ChatGPT Review
 
 Repository: `weiyang02520-ops/personal-intelligence`
 Branch: `main`
-Review Baseline: `bd12271c6e2cdc3a2e3e8fef440c47aaf86cfe82`
-Prior Gate Verdict: `M0-GATE-001 PASS_WITH_NOTES`
+Review Baseline: `e7f6d5c97a62b35cacfbabf713daa81f55aea001`
+Prior Gate Verdict: `POC-GATE-001 CHANGES_REQUESTED`; M0-GATE-001 `PASS_WITH_NOTES`
 Remote Verified At Baseline: YES
 
 ## Review focus
 
-1. Confirm repository identity and PoC review baseline.
-2. Review `docs/tasks/poc/` and PoC source/test evidence.
-3. Review `docs/gates/POC-GATE-001.md` and the PoC slice in `docs/IMPLEMENTATION_MAP.md`.
+1. Confirm repository identity and closure baseline.
+2. Review corrected evidence for TASK-POC-003/004/005/006/008/011.
+3. Review `docs/gates/POC-GATE-001.md`, `docs/audit/poc/SEARCH_CANCELLATION_CONFLICT.md` and the PoC slice in `docs/IMPLEMENTATION_MAP.md`.
 4. Decide whether the PoC gate is accepted and whether a later Architecture Foundation Freeze discussion may begin; M1 remains unauthorized.
 
 ## Required reviewer verdict

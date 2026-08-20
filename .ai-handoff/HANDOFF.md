@@ -5,7 +5,7 @@ Task: Physical Architecture PoC — POC-001..012
 Repository: weiyang02520-ops/personal-intelligence
 Visibility: PUBLIC
 Branch: main
-External Review Baseline: bd12271c6e2cdc3a2e3e8fef440c47aaf86cfe82
+External Review Baseline: e7f6d5c97a62b35cacfbabf713daa81f55aea001
 External Review Verdict: M0-GATE-001 PASS_WITH_NOTES
 Last Completed Checkpoint: M0 accepted with notes; PoC batch authorized
 Remote Verified At Baseline: YES
@@ -19,7 +19,7 @@ Reports are in `docs/audit/`:
 - `OPEN_TBDS.md`
 - `M0_READINESS.md`
 
-Result: `M0 COMPLETE_WITH_NOTES; POC EVIDENCE READY`
+Result: `M0 COMPLETE_WITH_NOTES; POC GATE CLOSURE IN PROGRESS`
 
 ## Agent Discovered Delta
 
@@ -39,11 +39,17 @@ Workflow SHA256: `40C6DBA5BE6A11A0082DF2A23AE4D9A8446D81C84946AA71C7094FE4BDCBB0
 3. PoC evidence may propose architecture candidates but may not accept ADRs or Architecture Freeze.
 4. Stop at POC-GATE-001 External Review; do not enter M1.
 
+## External Review delta
+
+- `POC-GATE-001`: `CHANGES_REQUESTED`.
+- Closure scope is evidence-only: SSE reconnect, PostgreSQL fault/recovery, Search cancellation contract audit, Secret canary matrix, and DeerFlow Gateway boundary.
+- Architecture Freeze: NO; M1: NOT AUTHORIZED.
+
 ## PoC completion checkpoint
 
 - `TASK-POC-001..011`: COMPLETE with task-level evidence.
 - `TASK-POC-012`: READY_FOR_EXTERNAL_REVIEW.
-- Gate recommendation: `READY_WITH_KNOWN_GAPS`; this is not a self-approval.
+- Previous gate recommendation `READY_WITH_KNOWN_GAPS` is superseded by External Review `CHANGES_REQUESTED`; corrected packet will be re-submitted.
 - Architecture Freeze: NO; M1: NOT AUTHORIZED.
 
 ## Next Action

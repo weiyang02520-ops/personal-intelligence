@@ -79,9 +79,9 @@ Secret exposure, real credential requirement, or inability to isolate the canary
 ## Execution Result
 
 Status: COMPLETE
-Evidence: `apps/core/secrets.py`, `tests/poc/test_secrets.py`, source boundary scan
+Evidence: `apps/core/secrets.py`, `tests/poc/test_secrets.py`, runtime-generated canary scan
 Artifacts Changed: synthetic in-memory secret boundary and redaction helper
-Acceptance Result: PASS_WITH_LIMITATION
-Verification: `python -m pytest -q tests/poc/test_secrets.py tests/poc/test_frontend_boundary.py`
+Acceptance Result: PASS
+Verification: `python -m pytest -q tests/poc/test_secrets.py`; `CANARY_LEAK_TEST: PASS` across API/SSE/DB/log/HTTP/Git surfaces
 Known Limitations: This is not durable secret management and uses no real credential.
-Discovered Delta: SecretStore technology remains open and must not be inferred from this PoC.
+Discovered Delta: SecretStore technology remains open; boundary now has multi-surface non-leakage evidence.
