@@ -12,25 +12,43 @@
 
 状态：已关闭。源文件仍保留在 Desktop；仓库内副本作为本项目 canonical Blueprint，源路径和复制事实已记录在 Handoff。
 
-## B. 仍阻塞正式 M0 Task 执行的最小项
+## B. 已由 M0 准备关闭的最小项
 
-### TBD-A02 — M0 Task packet schema
+### RESOLVED-M0-01 — M0 Task packet schema
+
+`docs/tasks/m0/TASK-M0-001.md` through `TASK-M0-014.md` now carry the PART 16.2 fields, explicit dependencies, allowed/forbidden paths, evidence and execution result sections.
+
+### RESOLVED-M0-02 — Reuse artifact canonical names
+
+`docs/audit/m0/` is the canonical namespace. `OPEN_SOURCE_AUDIT.md` is the umbrella; the seven plan-specified detailed artifacts are canonical. PART 05.8 names are legacy aliases only.
+
+### RESOLVED-M0-03 — M0 evidence / ADR authority boundary
+
+M0 artifacts record evidence, candidate classifications, conflicts, PoC questions and ADR update proposals. They do not accept ADRs, freeze architecture or authorize PoC/M1.
+
+### RESOLVED-M0-04 — M0 Gate evidence schema
+
+`docs/gates/M0-GATE-001.md` fixes Evidence ID, Gate ID, Condition, Source Task, Input Artifact, Evidence Level, Verification Method, Pass Rule, Observed Result, Status, Owner, Reviewer, Commit/Reference, Date and Known Limitations. The Gate remains non-PASS.
+
+## C. Remaining items that block PoC or Architecture Freeze
+
+### TBD-A02 — M0 Task packet schema (closed for M0)
 
 证据：PART 16.2 与 TASK-M0-001..014 不一致。
 
-需要关闭：补齐每个 M0 Task 的 Status、Depends On、Allowed/Forbidden Files、Required Tests、Commands、Acceptance、Stop Conditions；初始状态全部为 NOT_READY，直到审计记录确认。
+已关闭于本 M0 batch；后续 Milestone Task 仍需按同一模板生成。
 
-### TBD-A03 — Reuse artifact canonical names
+### TBD-A03 — Reuse artifact canonical names (closed for M0)
 
 证据：PART 05.8 与 PART 16.5 文件名不一致。
 
-需要关闭：确定 canonical 文件名、索引文件、证据存储位置和 M0-013 输入输出关系。
+已关闭；canonical 关系见 `docs/audit/m0/OPEN_SOURCE_AUDIT.md`。
 
-### TBD-A04 — M0 audit scope 的架构权限
+### TBD-A04 — M0 audit scope 的架构权限 (closed for M0)
 
 证据：PART 01.15、PART 16.3.23、PART 16.5.19 要求遇到架构变化停止；但 M0-013/014 会产出 ADR updates 和 Gate decision，未定义谁批准、哪些是报告、哪些是架构任务。
 
-需要关闭：把 M0 审计结论与架构决策分开，明确报告可以提出 options/recommendation，但只有显式 Architecture Review/ADR Task 才能接受决策。
+已关闭；Gate 仍等待 External Review。
 
 ## C. 不阻塞“审计框架”本身，但阻塞 PoC/Architecture Freeze
 

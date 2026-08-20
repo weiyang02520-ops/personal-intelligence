@@ -6,5 +6,7 @@
 - Added unchanged canonical copies of the Blueprint and Global Workflow.
 - Added project memory, handoff, state and review files.
 - Added Blueprint Audit, Spec Conflicts, Open TBDs and M0 Readiness reports.
-- Determined `NOT_READY_FOR_M0`.
+- Recorded External Review `CHANGES_REQUESTED` and corrected checkpoint SHA semantics.
+- Added TASK-M0-001..014 packets, M0 audit framework/artifacts, implementation map and M0-GATE-001 evidence packet.
+- Executed M0 audit batch; current result is `M0_EXTERNAL_REVIEW_REQUIRED`.
 - No Product Core, PoC or M1–M4 business code was added.

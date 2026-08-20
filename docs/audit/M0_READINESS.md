@@ -1,41 +1,45 @@
 # Personal Intelligence — M0 Readiness
 
-结论：`NOT_READY_FOR_M0`
+结论：`M0_EXTERNAL_REVIEW_REQUIRED`
 
-这里的“不 ready”指“不能正式把 Coding Agent 交给 TASK-M0-* 并要求其开始施工”。它不否定 M0 作为下一阶段的方向；plan.md 自己已把 M0 Reuse Audit 定义为下一 Gate。
+这不是 `M0-GATE-001 PASS`，也不是 Architecture Freeze。它表示 M0-001..014 的审计/准备工作已经形成可复核证据包，下一步必须由 External ChatGPT 独立审查远端仓库。
 
-## 判定依据
+## Task status
 
-1. plan.md 当前状态是 `PRE-IMPLEMENTATION / COMPLETE DESIGN DRAFT / Coding NOT STARTED / Architecture NOT FROZEN`，下一 Gate 是 M0 Reuse Audit（PART 16.15.18–16.15.25）。
-2. PART 16.1/16.2 规定只有 Spec 已冻结、Task 模板齐全的 Task 才能是 READY；TASK-M0-001..014 没有 Status、Depends On、Allowed Files、Forbidden Files、Commands、Acceptance Criteria、Stop Conditions 等必填字段。
-3. M0 产物文件名在 PART 05.8 与 PART 16.5 不一致，M0-001 无法确定 canonical output。
-4. M0 依赖的审计结果与 ADR 更新权限没有分离定义；M0-014 可以提出 Gate 结果，但不能自行接受架构 ADR。
-5. M0-GATE-001 缺少可验证的 Evidence ID、Owner、Pass Rule 和 Review Record schema。
-
-## TASK-M0-* 状态
-
-| Task | 状态 | 结论 |
+| Task | Status | Evidence |
 |---|---|---|
-| TASK-M0-001 | NOT_READY | 方向正确，是解阻后的第一个执行 Task；当前缺完整 Task packet、canonical outputs 和 Gate evidence contract |
-| TASK-M0-002..012 | NOT_READY | 依赖统一审计框架，但各自没有完整 Task contract；其中 Runtime/Search/Security 还受未关闭 Contract/TBD 约束 |
-| TASK-M0-013 | NOT_READY | 依赖 M0-002..012，且输入输出文件名/决策权限未冻结 |
-| TASK-M0-014 | NOT_READY | Gate evidence schema、reviewer、ADR acceptance rule 未定义 |
-| M0-GATE-001 | NOT_READY | 还没有任何正式 M0 audit evidence |
+| TASK-M0-001 | PASS | Unified reuse audit framework |
+| TASK-M0-002 | PARTIAL | DeerFlow runtime/API evidence; behavior/security open |
+| TASK-M0-003 | PARTIAL | Extension hierarchy candidate |
+| TASK-M0-004 | PARTIAL | Pi alternate runtime evidence; permission gap |
+| TASK-M0-005 | PARTIAL | Deep research capability map |
+| TASK-M0-006 | PARTIAL | Discovery strategy cards |
+| TASK-M0-007 | PARTIAL | Search provider matrix; live terms/cost open |
+| TASK-M0-008 | PARTIAL | Fetch/crawl/browser ladder |
+| TASK-M0-009 | PARTIAL | Community adapter candidates |
+| TASK-M0-010 | PARTIAL | UI reference matrix |
+| TASK-M0-011 | PARTIAL | Queue/workflow decision input |
+| TASK-M0-012 | PARTIAL | Security/sandbox evidence; proof open |
+| TASK-M0-013 | PASS | Synthesis as candidates, no ADR acceptance |
+| TASK-M0-014 | PASS | Gate packet prepared, not self-approved |
 
-## 阻塞 M0 的最小问题集合
+## M0 gate condition
 
-只需先解决以下三项，不需要重写整个计划书：
+`M0 GATE CANDIDATE RESULT: READY_FOR_EXTERNAL_REVIEW`
 
-1. 按 PART 16.2 为 M0-001..014 补齐最小 Task packet；初始状态保持 NOT_READY。
-2. 统一 M0 审计产物命名，并确定 `REUSE_AUDIT`、分项 Audit、Reuse Matrix、Strategy Registry、ADR updates 的关系。
-3. 明确 M0 审计只能生成 evidence/recommendation，架构接受必须通过独立 ADR/Architecture Review；同时为 M0-GATE-001 建立最小 Gate evidence 表。
+The first task executed was `TASK-M0-001 — Create reuse audit framework`. The M0 batch then completed the audit-only tasks and stopped before PoC/M1, as authorized by the External Review batch override.
 
-这三项不要求选择 Runtime、数据库、Queue、Provider，也不要求实现 PoC；它们只是让 M0 审计本身可以在不越权的前提下启动。
+## Remaining blockers for PoC / Architecture Freeze
 
-## 解阻后的第一步
+- Exact Runtime adapter contract and security enforcement proof.
+- Provider live behavior, rate/cost/terms and provenance normalization.
+- Crawler/browser isolation, SSRF and legal/maintenance evidence.
+- Queue/DB/UoW/Outbox choice and proof.
+- Public API/Event/Error/State mapping and full traceability.
+- Domain ownership conflicts recorded in `SPEC_CONFLICTS.md`.
 
-完成上述最小集合后，第一个执行 Task 应为：`TASK-M0-001 — Create reuse audit framework`。
+These are not reasons to invent architecture during M0 audit; they are explicit inputs for later Architecture Review/PoC.
 
-执行范围只允许建立审计模板、证据等级、PASS/PARTIAL/FAIL/UNKNOWN 规则、复用模式和报告 schema；不得开始 DeerFlow、Search Provider、Radar、Ranking 或 Product Core 实现。
+## First next action
 
-在 TASK-M0-001 完成并通过其文档验证前，不应执行 TASK-M0-002..014；在 M0-GATE-001 PASS 前，不应进入 Physical Architecture PoC。
+External ChatGPT reviews `docs/gates/M0-GATE-001.md` against the remote repository and returns a gate verdict. Do not enter PoC, M1, M2, M3 or M4 before that review.

@@ -4,7 +4,8 @@
 
 审计日期：2026-08-20
 
-审计结论：`NOT_READY_FOR_M0`
+初始蓝图审计结论：`NOT_READY_FOR_M0`
+当前操作结论：见 `M0_READINESS.md`，为 `M0_EXTERNAL_REVIEW_REQUIRED`；初始审计发现没有被静默删除。
 
 ## 1. 审计范围与方法
 

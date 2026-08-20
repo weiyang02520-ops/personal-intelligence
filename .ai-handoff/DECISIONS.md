@@ -11,3 +11,10 @@
 ## Not decisions
 
 Backend language, database, queue, Runtime selection, Provider mix, API schema details and unresolved Domain ownership remain TBD/PROPOSED as documented in `docs/plan(4).md` and `docs/audit/OPEN_TBDS.md`.
+
+## M0 evidence decisions (not architecture decisions)
+
+- `docs/audit/m0/` is the canonical M0 audit namespace; PART 05.8 names are legacy aliases.
+- M0 classifications are evidence candidates: REUSE, ADAPT, REFERENCE, REJECT, UNKNOWN.
+- M0-013/014 may synthesize and prepare a Gate packet but may not accept ADRs or mark `M0-GATE-001 PASS`.
+- Current candidate directions: Pi ADAPT with external sandbox; DeerFlow ADAPT/UNKNOWN pending contract/security proof; research/discovery/UI mostly REFERENCE; provider/crawler/queue remain PoC inputs.

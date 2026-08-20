@@ -1,19 +1,19 @@
 # CHATGPT_MEMORY
 
 Memory Schema Version: 1
-Memory Revision: 1
+Memory Revision: 2
 Last Updated: 2026-08-20
-Current Milestone: PRE-M0
+Current Milestone: M0
 
 ## CURRENT TRUTH
 
 [REPO_CONFIRMED] Personal Intelligence 的 Public GitHub 仓库是 `weiyang02520-ops/personal-intelligence`，默认分支为 `main`。
 
-[REPO_CONFIRMED] 当前仓库起始提交为 `690367c4be5b`，当前阶段是 Project Bootstrap / Blueprint Audit。
+[REPO_CONFIRMED] External Review baseline 为 `2b60b049630b02c1c9cfd37b0286638da2431bca`；后续 checkpoint 不写自引用 Final HEAD。
 
 [REPO_CONFIRMED] Blueprint canonical location 是 `docs/plan(4).md`，其源文件来自 `C:\Users\peng\Desktop\plan.md`，原文完整保留。
 
-[EXTERNAL_REVIEW] 当前审计结论为 `NOT_READY_FOR_M0`：M0 Task packet、canonical artifact names、M0 Gate evidence schema 和 repo continuity 已在本轮形成/记录，但 M0 Task 尚未 READY，需 External ChatGPT Review。
+[EXTERNAL_REVIEW] 变更要求允许 M0-001..014 连续执行，但必须在 M0-GATE-001 External Review 停止；当前结论为 `M0_EXTERNAL_REVIEW_REQUIRED`。
 
 ## USER INTENT
 
@@ -34,6 +34,8 @@ Current Milestone: PRE-M0
 [EXTERNAL_REVIEW] Blueprint 覆盖到 PART 16，但仍是 Complete Design Draft，不是 Architecture Frozen。
 
 [EXTERNAL_REVIEW] Requirement → Use Case → Module → Component → Function → Test → Task → Milestone → Gate 的实际 Map 尚未闭合；大量 Function 缺 Test ID，M0 Task 缺少完整 Task Template 字段。
+
+[EXTERNAL_REVIEW] 本 M0 batch 已补齐 Task Packet、canonical audit artifacts、M0 traceability slice 与 Gate Evidence；审计结果仍保留 PARTIAL/UNKNOWN，不等于架构冻结。
 
 ## OPEN QUESTIONS
 
