@@ -1,13 +1,13 @@
 # HANDOFF
 
-Task: Project Bootstrap + Blueprint Audit
+Task: M0 Preparation after External Review — CHANGES_REQUESTED
 
 Repository: weiyang02520-ops/personal-intelligence
 Visibility: PUBLIC
 Branch: main
-Starting HEAD: 690367c4be5b
-Final HEAD: b8790c8495622f160befa25bd10ce4ee32b9b84d
-Remote Verified: YES
+External Review Baseline: 2b60b049630b02c1c9cfd37b0286638da2431bca
+Last Completed Checkpoint: bootstrap + blueprint audit + review handoff metadata
+Remote Verified At Baseline: YES
 
 ## Blueprint Audit
 
@@ -18,7 +18,7 @@ Reports are in `docs/audit/`:
 - `OPEN_TBDS.md`
 - `M0_READINESS.md`
 
-Result: `NOT_READY_FOR_M0`
+Result: `M0_EXTERNAL_REVIEW_REQUIRED`
 
 ## Agent Discovered Delta
 
@@ -31,13 +31,13 @@ Blueprint SHA256: `E6E282462AD7777EDCAD915000E0FD4F07E26C7E47A1E395E2AF70E7BB9D0
 
 Workflow SHA256: `40C6DBA5BE6A11A0082DF2A23AE4D9A8446D81C84946AA71C7094FE4BDCBB04D`
 
-## Minimum blockers
+## Current M0 preparation boundary
 
-1. External review of this bootstrap/audit checkpoint.
-2. M0 Task packet fields must be completed before any M0 Task is READY.
-3. Reuse artifact canonical names and M0 Gate evidence schema must be confirmed.
+1. Execute only M0-001..014 audit/preparation work.
+2. M0 Task packet fields and canonical artifacts must be explicit.
+3. M0 Gate evidence must remain non-PASS until External Review.
 4. Audit conclusions may recommend ADR changes but must not accept architecture decisions implicitly.
 
 ## Next Action
 
-External ChatGPT review required. Do not start TASK-M0-001 automatically.
+External ChatGPT review is required at M0-GATE-001; do not enter PoC or M1.

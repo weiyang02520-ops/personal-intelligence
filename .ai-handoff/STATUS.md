@@ -1,14 +1,14 @@
 # STATUS
 
-Status: PARTIAL — bootstrap and audit prepared; M0 not ready
+Status: M0_EXTERNAL_REVIEW_REQUIRED — M0 preparation evidence packet ready for review
 
 Repository: weiyang02520-ops/personal-intelligence
 Visibility: PUBLIC
 Branch: main
-Starting HEAD: 690367c4be5b
-Final HEAD: b8790c8495622f160befa25bd10ce4ee32b9b84d
-Remote Verified: YES
+Review Baseline: 2b60b049630b02c1c9cfd37b0286638da2431bca
+Last Completed Checkpoint: bootstrap + blueprint audit + review handoff metadata
+Remote Verified At Baseline: YES
 
-Blueprint Audit: PARTIAL / NOT FROZEN
-M0 Readiness: NOT_READY_FOR_M0
-Current Gate: EXTERNAL REVIEW REQUIRED
+Blueprint Audit: COMPLETE DESIGN DRAFT / NOT FROZEN
+M0 Readiness: M0_EXTERNAL_REVIEW_REQUIRED
+Current Gate: M0-GATE-001 EXTERNAL REVIEW REQUIRED

@@ -1,9 +1,9 @@
 # AGENT_MEMORY
 
 Memory Schema Version: 1
-Memory Revision: 1
+Memory Revision: 2
 Last Updated: 2026-08-20
-Current Milestone: PRE-M0
+Current Milestone: M0
 
 ## EXECUTION BOOTSTRAP
 
@@ -16,15 +16,15 @@ Current Milestone: PRE-M0
 
 ## CURRENT PROJECT TRUTH
 
-- Current Phase: `PROJECT_BOOTSTRAP / BLUEPRINT_AUDIT`
-- Current Gate: `PRE-M0 / EXTERNAL REVIEW REQUIRED`
+- Current Phase: `M0_PREPARATION / EXTERNAL_REVIEW_CHANGES_REQUESTED`
+- Current Gate: `M0-GATE-001 / EXTERNAL REVIEW REQUIRED`
 - Implementation: `NOT STARTED`
-- M0 Readiness: `NOT_READY_FOR_M0`
+- M0 Readiness: `M0_EXTERNAL_REVIEW_REQUIRED`
 - No Product Core, PoC, M1, M2, M3 or M4 business implementation is authorized in this checkpoint.
 
 ## CURRENT NEXT TASK
 
-No READY task. After External ChatGPT Review and closure of the minimum readiness set, the intended first task is `TASK-M0-001 — Create reuse audit framework`.
+The approved batch boundary is `TASK-M0-001..014`, limited to M0 audit/preparation. `TASK-M0-001` is the first task; M0-013 and M0-014 remain dependency-gated. No PoC/M1 task is authorized.
 
 ## ARCHITECTURE RULES
 
@@ -43,7 +43,8 @@ UI → Application/Intelligence → Domain → Capability Interfaces → Adapter
 - Never commit secrets or unrelated files.
 - Run status, diff, secret checks and relevant documentation checks before commit.
 - Push only the scoped checkpoint and verify local HEAD equals the expected remote branch HEAD.
-- Stop after External Review handoff.
+- Do not write a self-referential `Final HEAD` into tracked state. Record the review baseline and checkpoint content; report the final remote HEAD externally after push.
+- Stop after `M0-GATE-001` External Review handoff.
 
 ## STOP RULES
 
