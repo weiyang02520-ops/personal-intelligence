@@ -2,13 +2,13 @@
 
 Project: Personal Intelligence
 
-Current Phase: M0_PREPARATION / EXTERNAL_REVIEW_CHANGES_REQUESTED
+Current Phase: PHYSICAL_ARCHITECTURE_POC
 
-Architecture Status: NOT FROZEN
+Architecture Status: NOT FROZEN — PoC evidence in progress
 
-Implementation Status: NOT STARTED
+Implementation Status: POC IN PROGRESS — no production implementation
 
-Current Gate: M0 PREPARATION / EXTERNAL REVIEW REQUIRED
+Current Gate: POC-GATE-001 / EXTERNAL REVIEW REQUIRED
 
 Repository: weiyang02520-ops/personal-intelligence
 
@@ -18,23 +18,23 @@ Repository URL: https://github.com/weiyang02520-ops/personal-intelligence
 
 Branch: main
 
-Baseline HEAD: 2b60b049630b02c1c9cfd37b0286638da2431bca
+Baseline HEAD: bd12271c6e2cdc3a2e3e8fef440c47aaf86cfe82
 
-Last Externally Reviewed HEAD: 2b60b049630b02c1c9cfd37b0286638da2431bca
+Last Externally Reviewed HEAD: bd12271c6e2cdc3a2e3e8fef440c47aaf86cfe82
 
-Last Completed Checkpoint: bootstrap + blueprint audit + review handoff metadata
+Last Completed Checkpoint: M0-GATE-001 PASS_WITH_NOTES; PoC authorized
 
 Canonical Blueprint: docs/plan(4).md
 
 Canonical Workflow: AI_LONG_TERM_WORKFLOW.md
 
 Current Goal:
-完成 Project Bootstrap、完整 Blueprint Audit、M0 Readiness 判定，并依据 External Review 继续完成 M0 准备，但停在 M0-GATE-001 External Review。
+执行 POC-001..012，验证物理架构边界，并停在 POC-GATE-001 External Review。
 
 Coding Policy:
 在 Architecture Freeze 前，不进行正式业务开发；不得提前进入 PoC、M1、M2、M3、M4。
 
-M0 Readiness: M0_EXTERNAL_REVIEW_REQUIRED
+M0 Readiness: COMPLETE_WITH_NOTES
 
 Next Intended Action:
-完成 TASK-M0-001..014 的 M0 范围准备与证据包后，提交 M0-GATE-001 给 External ChatGPT Review；不得进入 PoC 或 M1。
+完成 TASK-POC-001..012 和 POC-GATE-001 证据包后，提交 External ChatGPT Review；不得进入 M1。

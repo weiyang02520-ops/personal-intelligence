@@ -4,9 +4,11 @@ Gate: M0-GATE-001
 Milestone: M0  
 Gate decision authority: External ChatGPT / Architecture Review  
 Coding Agent result: `M0 GATE CANDIDATE RESULT: READY_FOR_EXTERNAL_REVIEW`  
-Final Gate status: `PENDING_EXTERNAL_REVIEW`  
+External Review verdict: `PASS_WITH_NOTES`
+Final Gate status: `PASS_WITH_NOTES`
 Architecture Freeze: NO  
-PoC/M1 authorization: NO
+Physical Architecture PoC authorization: YES
+M1 authorization: NO
 
 ## Evidence register
 
@@ -15,7 +17,7 @@ PoC/M1 authorization: NO
 | EVID-M0-001 | M0-GATE-001 | M0 Task packets complete | M0-001..014 | `docs/tasks/m0/` | L1 | Required-field scan | 14 packets contain all PART 16.2 fields | All 14 packets present; result sections recorded | PASS_CANDIDATE | Workspace Agent | External ChatGPT | Current review packet | 2026-08-20 | Human review still required |
 | EVID-M0-002 | M0-GATE-001 | Canonical audit artifacts unambiguous | M0-001, M0-013 | `docs/audit/m0/` | L1 | Path/index scan | One canonical set; legacy names are aliases | Umbrella and 7 canonical files present | PASS_CANDIDATE | Workspace Agent | External ChatGPT | `OPEN_SOURCE_AUDIT.md` | 2026-08-20 | No automated alias links exist |
 | EVID-M0-003 | M0-GATE-001 | Reuse evidence is not README-only | M0-001..012 | M0 audit artifacts | L1/L2 | Evidence-level and field scan | Each claim separates source/interface/behavior/integration/security | Framework complete; many candidates remain PARTIAL/UNKNOWN | PARTIAL | Workspace Agent | External ChatGPT | `REUSE_AUDIT.md` | 2026-08-20 | No live credentials or upstream execution |
-| EVID-M0-004 | M0-GATE-001 | Runtime adapter path is reviewable | M0-002..004, M0-012 | `RUNTIME_AUDIT.md` | L1/L2 | Capability matrix review | Candidate path and gaps are explicit; no selection required | Pi ADAPT candidate; DeerFlow UNKNOWN; security gap explicit | PARTIAL | Workspace Agent | External ChatGPT | `RUNTIME_AUDIT.md` | 2026-08-20 | DeerFlow exact commit/contract not pinned |
+| EVID-M0-004 | M0-GATE-001 | Runtime adapter path is reviewable | M0-002..004, M0-012 | `RUNTIME_AUDIT.md` | L1/L2 | Capability matrix review | Candidate path and gaps are explicit; no selection required | Pi ADAPT candidate; DeerFlow ADAPT/UNKNOWN; security gap explicit | PARTIAL | Workspace Agent | External ChatGPT | `RUNTIME_AUDIT.md` | 2026-08-20 | Reviewed upstream commit is pinned; adopted dependency version and contract acceptance are not frozen |
 | EVID-M0-005 | M0-GATE-001 | Search/crawler path is reviewable | M0-007..009 | `SEARCH_PROVIDER_AUDIT.md` | L1/L2 | Matrix/escalation review | Provider candidates, limits and escalation boundaries recorded | Candidate matrix and ladder complete; live behavior unknown | PARTIAL | Workspace Agent | External ChatGPT | `SEARCH_PROVIDER_AUDIT.md` | 2026-08-20 | No provider credentials/live calls |
 | EVID-M0-006 | M0-GATE-001 | Algorithm reuse is separated from PI ownership | M0-005..006 | `ALGORITHM_REUSE_AUDIT.md`, `STRATEGY_REGISTRY.md` | L1/L2 | Strategy card review | References do not become direct dependencies or ownership changes | Reference cards complete; benchmark evidence deferred | PASS_CANDIDATE | Workspace Agent | External ChatGPT | `ALGORITHM_REUSE_AUDIT.md` | 2026-08-20 | Exact commits/licenses remain for later pinning |
 | EVID-M0-007 | M0-GATE-001 | Queue/security remain candidates, not self-decisions | M0-011..012 | Matrix/runtime artifacts | L1/L2 | Classification and ADR scan | No DB/Queue/Security ADR is accepted | Candidate inputs and gaps recorded; no implementation | PASS_CANDIDATE | Workspace Agent | External ChatGPT | `REUSE_DECISION_MATRIX.md` | 2026-08-20 | PoC proof required |
@@ -38,7 +40,7 @@ PoC/M1 authorization: NO
 
 `M0 GATE CANDIDATE RESULT: READY_FOR_EXTERNAL_REVIEW`
 
-This means the evidence packet is complete enough for independent review. It does not mean `M0-GATE-001 PASS`, Architecture Freeze, PoC authorization or M1 authorization.
+External Review accepted this packet with notes: the reviewed DeerFlow upstream commit is pinned, but the adopted runtime version is not frozen; Reuse Decision Classification and Plan Reuse Mode are separate fields. This does not constitute Architecture Freeze or M1 authorization.
 
 ## Known limitations
 

@@ -1,30 +1,31 @@
 # AGENT_MEMORY
 
 Memory Schema Version: 1
-Memory Revision: 2
+Memory Revision: 3
 Last Updated: 2026-08-20
-Current Milestone: M0
+Current Milestone: Physical Architecture PoC
 
 ## EXECUTION BOOTSTRAP
 
 - Repository: `weiyang02520-ops/personal-intelligence`
 - Visibility: PUBLIC
 - Branch: `main`
-- Starting HEAD: `690367c4be5b`
+- External Review Baseline: `bd12271c6e2cdc3a2e3e8fef440c47aaf86cfe82`
 - Canonical Blueprint: `docs/plan(4).md`
 - Canonical Workflow: `AI_LONG_TERM_WORKFLOW.md`
 
 ## CURRENT PROJECT TRUTH
 
-- Current Phase: `M0_PREPARATION / EXTERNAL_REVIEW_CHANGES_REQUESTED`
-- Current Gate: `M0-GATE-001 / EXTERNAL REVIEW REQUIRED`
-- Implementation: `NOT STARTED`
-- M0 Readiness: `M0_EXTERNAL_REVIEW_REQUIRED`
-- No Product Core, PoC, M1, M2, M3 or M4 business implementation is authorized in this checkpoint.
+- Current Phase: `PHYSICAL_ARCHITECTURE_POC`
+- Current Gate: `POC-GATE-001 / EXTERNAL REVIEW REQUIRED`
+- Implementation: `POC IN PROGRESS — no production implementation`
+- M0 Readiness: `COMPLETE_WITH_NOTES`
+- M0 External Review: `PASS_WITH_NOTES`
+- M1, M2, M3 and M4 business implementation remains unauthorized.
 
 ## CURRENT NEXT TASK
 
-The approved batch boundary is `TASK-M0-001..014`, limited to M0 audit/preparation. `TASK-M0-001` is the first task; M0-013 and M0-014 remain dependency-gated. No PoC/M1 task is authorized.
+The approved batch boundary is `TASK-POC-001..012`, limited to Physical Architecture PoC. Stop at `POC-GATE-001` External Review; no M1 task is authorized.
 
 ## ARCHITECTURE RULES
 
@@ -44,7 +45,7 @@ UI → Application/Intelligence → Domain → Capability Interfaces → Adapter
 - Run status, diff, secret checks and relevant documentation checks before commit.
 - Push only the scoped checkpoint and verify local HEAD equals the expected remote branch HEAD.
 - Do not write a self-referential `Final HEAD` into tracked state. Record the review baseline and checkpoint content; report the final remote HEAD externally after push.
-- Stop after `M0-GATE-001` External Review handoff.
+- Stop after `POC-GATE-001` External Review handoff.
 
 ## STOP RULES
 
@@ -55,3 +56,6 @@ Stop when repository identity is uncertain, a required credential is missing, an
 - The current workspace root is a multi-project Git repository with unrelated modifications and is not the PI repository.
 - The correct Public repository already existed; no repository creation was necessary.
 - The local Pi source candidate was found separately at `C:\Users\peng\Desktop\pi分析\pi-source`, but it is only a future M0 audit input, not a PI dependency decision.
+
+- External Review verdict: `M0-GATE-001 PASS_WITH_NOTES`; Physical Architecture PoC authorized, Architecture Freeze and M1 not authorized.
+- Reviewed DeerFlow commit is pinned for audit; adopted runtime version remains NOT FROZEN.

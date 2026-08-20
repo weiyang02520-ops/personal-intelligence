@@ -26,3 +26,20 @@ Product `REQ-*` → Use Case → Module → Component → Function → Test → 
 ## Traceability rule
 
 Every later implementation task must link back to a Requirement or explicit `ARCH-*`/`NFR-*`/`GOV-*` control, its Function/Interface and Test IDs, then a Gate condition. M0 audit tasks produce evidence documents only and do not create Product Core implementation mappings.
+
+## Current coverage: Physical Architecture PoC slice
+
+| Requirement / control | PoC Task | Interface / Contract | Required Test | Evidence | POC-GATE-001 condition |
+|---|---|---|---|---|---|
+| `ARCH-POC-001` Runtime boundary | POC-001, POC-008 | `IF-RUNTIME-001`, `DeerFlowRuntimeAdapter` | Import boundary + adapter contract | Skeleton/import report + runtime audit | PI Core is runtime-agnostic |
+| `ARCH-POC-002` Search boundary | POC-006 | `IF-SEARCH-001`, `SearchGateway` | Normal/timeout/429/auth/no-result/cancel | Search contract report | Real provider adapter normalized |
+| `ARCH-POC-003` Public API boundary | POC-002, POC-010 | `POST/GET /research` | API lifecycle contract | API test report | Web uses PI API only |
+| `ARCH-POC-004` SSE/event boundary | POC-003 | PI PublicEvent + SSE | Disconnect/reconnect sequence test | SSE replay report | Runtime SSE not exposed |
+| `ARCH-POC-005` Persistence transaction/outbox | POC-004 | state + outbox transaction | commit failure/idempotent consumer | Outbox fault report | Atomicity is evidenced |
+| `ARCH-POC-006` Job/recovery | POC-005 | enqueue/worker/lease/recovery | worker kill/restart | Job recovery report | Simplest candidate recovers |
+| `NFR-POC-001` Fetch security | POC-007 | `FetchGateway` | SSRF/private/metadata/redirect tests | Fetch security report | Required targets blocked |
+| `NFR-POC-002` Secret boundary | POC-011 | `SecretStore` | API/SSE/DB/log/HTTP/Git canary scan | SecretStore report | Canary never leaks |
+| `NFR-POC-003` Runtime tool bridge | POC-009 | bounded PI search tool | allow/deny/key non-exposure | Tool bridge report | Runtime receives no provider key |
+| `GOV-POC-001` External gate discipline | POC-012 | POC-GATE-001 evidence schema | coverage + non-self-PASS scan | Gate packet | External review required |
+
+Future Product Requirement mappings remain out of scope for this PoC slice.

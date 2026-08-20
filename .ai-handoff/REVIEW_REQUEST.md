@@ -1,21 +1,22 @@
 # REVIEW_REQUEST
 
-Review Gate: M0-GATE-001 External ChatGPT Review
+Review Gate: POC-GATE-001 External ChatGPT Review
 
 Repository: `weiyang02520-ops/personal-intelligence`
 Branch: `main`
-Review Baseline: `2b60b049630b02c1c9cfd37b0286638da2431bca`
+Review Baseline: `bd12271c6e2cdc3a2e3e8fef440c47aaf86cfe82`
+Prior Gate Verdict: `M0-GATE-001 PASS_WITH_NOTES`
 Remote Verified At Baseline: YES
 
 ## Review focus
 
-1. Confirm repository identity and review baseline.
-2. Review M0 Task Packets and canonical M0 audit artifacts.
-3. Review `docs/gates/M0-GATE-001.md` and `docs/IMPLEMENTATION_MAP.md`.
-4. Confirm whether M0 evidence is sufficient to enter PoC; no automatic PASS is implied.
+1. Confirm repository identity and PoC review baseline.
+2. Review `docs/tasks/poc/` and PoC source/test evidence.
+3. Review `docs/gates/POC-GATE-001.md` and the PoC slice in `docs/IMPLEMENTATION_MAP.md`.
+4. Decide whether Architecture Foundation Freeze v1 may be accepted; M1 remains unauthorized until explicit review.
 
 ## Required reviewer verdict
 
 `PASS` / `PASS_WITH_NOTES` / `CHANGES_REQUESTED` / `PARTIAL` / `FAIL`
 
-Until review is complete, no PoC/M1 implementation starts. M0 audit tasks may be executed only within the approved batch boundary.
+Until review is complete, no M1 implementation starts. PoC implementation is limited to TASK-POC-001..012.

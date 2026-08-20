@@ -23,7 +23,8 @@ Status: PARTIAL — evidence-backed candidates; no Runtime decision accepted
 ## Candidate record: DeerFlow
 
 - Repository: https://github.com/bytedance/deer-flow
-- Exact reviewed commit: `a5acc25de6742b2166b3f41c97bd895822277b94` on `main` (2026-08-20 remote inspection)
+- Reviewed upstream commit: `a5acc25de6742b2166b3f41c97bd895822277b94` on `main` (2026-08-20 remote inspection)
+- Adopted Runtime Version: `NOT FROZEN`; this audit baseline is not a runtime selection.
 - License / maintenance: MIT from upstream repository metadata and `LICENSE`; repository active at review time.
 - Relevant source anchors: `backend/`, `contracts/`, `frontend/`, `skills/`, `tests/`, `README.md`, `extensions_config.example.json`.
 - Claimed capability: runtime/agent execution, skills, MCP, files, sandbox, memory, subagents and streaming surfaces are named by upstream project materials.
@@ -72,7 +73,7 @@ These sources support interface/extension claims only. DeerFlow's own docs state
 
 ## Open gaps / PoC questions
 
-- Pin DeerFlow commit and inspect actual gateway/API/event surfaces.
+- Treat `a5acc25de6742b2166b3f41c97bd895822277b94` as the reviewed source baseline; adopted dependency version remains `NOT FROZEN`.
 - Map Pi session/event/tool APIs to `IF-RUNTIME-001` without changing the contract.
 - Prove cancel/resume/error isolation and permission enforcement in a sandboxed PoC.
 - Record license and maintenance evidence at the exact selected version.

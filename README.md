@@ -25,8 +25,8 @@ Personal Intelligence 是一个正在设计中的个人智能发现与深度研�
 - Canonical Blueprint: `docs/plan(4).md`
 - Global workflow: `AI_LONG_TERM_WORKFLOW.md`
 - Audit reports: `docs/audit/`
-- Current phase: `M0_PREPARATION / EXTERNAL_REVIEW_CHANGES_REQUESTED`
-- Current gate: `M0-GATE-001 / EXTERNAL REVIEW REQUIRED`
-- M0 readiness: `M0_EXTERNAL_REVIEW_REQUIRED`
+- Current phase: `PHYSICAL_ARCHITECTURE_POC`
+- Current gate: `POC-GATE-001 / EXTERNAL REVIEW REQUIRED`
+- M0 readiness: `COMPLETE_WITH_NOTES`
 
 本仓库当前只承载设计、审计和长期连续性资料；没有开始 Product Core、PoC 或 M1–M4 业务实现。

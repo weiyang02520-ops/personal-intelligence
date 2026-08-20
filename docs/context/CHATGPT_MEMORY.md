@@ -1,19 +1,19 @@
 # CHATGPT_MEMORY
 
 Memory Schema Version: 1
-Memory Revision: 2
+Memory Revision: 3
 Last Updated: 2026-08-20
-Current Milestone: M0
+Current Milestone: Physical Architecture PoC
 
 ## CURRENT TRUTH
 
 [REPO_CONFIRMED] Personal Intelligence 的 Public GitHub 仓库是 `weiyang02520-ops/personal-intelligence`，默认分支为 `main`。
 
-[REPO_CONFIRMED] External Review baseline 为 `2b60b049630b02c1c9cfd37b0286638da2431bca`；后续 checkpoint 不写自引用 Final HEAD。
+[REPO_CONFIRMED] 当前 Physical Architecture PoC baseline 为 `bd12271c6e2cdc3a2e3e8fef440c47aaf86cfe82`；后续 checkpoint 不写自引用 Final HEAD。
 
 [REPO_CONFIRMED] Blueprint canonical location 是 `docs/plan(4).md`，其源文件来自 `C:\Users\peng\Desktop\plan.md`，原文完整保留。
 
-[EXTERNAL_REVIEW] 变更要求允许 M0-001..014 连续执行，但必须在 M0-GATE-001 External Review 停止；当前结论为 `M0_EXTERNAL_REVIEW_REQUIRED`。
+[EXTERNAL_REVIEW] `M0-GATE-001 PASS_WITH_NOTES`；允许 POC-001..012 连续执行，必须在 POC-GATE-001 External Review 停止。
 
 ## USER INTENT
 
@@ -36,6 +36,8 @@ Current Milestone: M0
 [EXTERNAL_REVIEW] Requirement → Use Case → Module → Component → Function → Test → Task → Milestone → Gate 的实际 Map 尚未闭合；大量 Function 缺 Test ID，M0 Task 缺少完整 Task Template 字段。
 
 [EXTERNAL_REVIEW] 本 M0 batch 已补齐 Task Packet、canonical audit artifacts、M0 traceability slice 与 Gate Evidence；审计结果仍保留 PARTIAL/UNKNOWN，不等于架构冻结。
+
+[EXTERNAL_REVIEW] PoC must distinguish reviewed upstream commit from adopted/frozen dependency version, and Decision Classification from Plan Reuse Mode.
 
 ## OPEN QUESTIONS
 

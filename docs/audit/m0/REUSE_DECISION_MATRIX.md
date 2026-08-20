@@ -5,22 +5,22 @@ Status: DECISION CANDIDATES ONLY — no ADR accepted, no Architecture Freeze
 
 ## Matrix
 
-| Capability | Candidate | Evidence | Classification candidate | Verified existing capability | PI custom design / open gap | ADR update proposal |
-|---|---|---|---|---|---|---|
-| Runtime | DeerFlow | L0-L2 UNKNOWN | UNKNOWN | No | Pin source and inspect external contract | Update ADR-002 with contract evidence rule |
-| Runtime | Pi | L1, L2/L3 partial | ADAPT | Sessions/tools likely; permission absent | Adapter, cancel/resume/state mapping, sandbox | Update ADR-002/003 with alternate-runtime comparison |
-| Search gateway | SearXNG | L1/L2 candidate | ADAPT | HTTP metasearch boundary candidate | Operator/health/provenance normalization | Update ADR-004 with provider contract evidence |
-| Search provider | Brave/Exa/Tavily | L2 docs candidate | ADAPT/UNKNOWN | Hosted APIs exist | Credentials, costs, terms, rate limits, live shape | Record provider selection as later architecture task |
-| GitHub vertical | GitHub REST Search | L2 official docs | ADAPT | API boundary candidate | Auth, rate limit, provenance and query semantics | Add vertical provider evidence to ADR-004 |
-| Fetch/Crawl | Direct HTTP | L1 | REFERENCE / PI CUSTOM DESIGN | Common-case fetch concept | SSRF, parser, provenance, trust | Define boundary in crawler PoC task |
-| Crawl | Crawl4AI/Firecrawl | L1/L2 candidate | ADAPT/UNKNOWN | Candidate crawl interfaces | License, isolation, hosting and failure behavior | Compare in PoC, no dependency yet |
-| Browser fallback | Browser Use | L1/L2 candidate | REFERENCE/ADAPT | Browser automation pattern | Permission/isolation/nondeterminism | Security/PoC decision input |
-| Research loop | ODR/GPT Researcher/Deep Searcher | L1/L2 partial | REFERENCE | Patterns and codebases exist | PI-owned evidence/citation semantics | Add algorithm reference note, no fork |
-| Discovery strategy | STORM/MindSearch/Alibaba family | L1/L2 partial | REFERENCE | Strategy candidates | Ownership, stop thresholds, benchmark | M1 strategy ADR proposal |
-| Community connectors | SurfSense/REST/MCP | L1/L2 partial | ADAPT/REFERENCE | Connector patterns | Auth, terms, schema/security | Adapter contract review |
-| Queue/workflow | DB queue / Arq / RQ / Celery / Temporal-like | L1/L2 candidate | INFRASTRUCTURE_OPTION / UNKNOWN | Capability categories | Final Python stack, DB, durability, ops | Update ADR-001/005/006 after PoC |
-| Security | External sandbox + permission layer | L1/L2 partial | ADAPT / PI CUSTOM DESIGN | Need is verified | Trust boundary and enforcement unproven | Update ADR-003 with security acceptance tests |
-| UI primitives | Morphic/Vane/DeerFlow/CC Switch | L0-L2 partial | REFERENCE | Patterns only | PI-owned UI and API boundary | M4 design/reference review |
+| Capability | Candidate | Evidence | Decision Classification | Plan Reuse Mode | Verified existing capability | PI custom design / open gap | ADR update proposal |
+|---|---|---|---|---|---|---|---|
+| Runtime | DeerFlow | L1/L2 partial | UNKNOWN | ADAPTER | API/extension surface reviewed | Pin source contract; adopted version not frozen | Update ADR-002 with contract evidence rule |
+| Runtime | Pi | L1, L2/L3 partial | ADAPT | ADAPTER | Sessions/tools likely; permission absent | Adapter, cancel/resume/state mapping, sandbox | Update ADR-002/003 with alternate-runtime comparison |
+| Search gateway | SearXNG | L1/L2 candidate | ADAPT | ADAPTER | HTTP metasearch boundary candidate | Operator/health/provenance normalization | Update ADR-004 with provider contract evidence |
+| Search provider | Brave/Exa/Tavily | L2 docs candidate | UNKNOWN | ADAPTER | Hosted APIs exist | Credentials, costs, terms, rate limits, live shape | Record provider selection as later architecture task |
+| GitHub vertical | GitHub REST Search | L2 official docs | ADAPT | ADAPTER | API boundary candidate | Auth, rate limit, provenance and query semantics | Add vertical provider evidence to ADR-004 |
+| Fetch/Crawl | Direct HTTP | L1 | REFERENCE | REJECT | Common-case fetch concept | SSRF, parser, provenance, trust | Define boundary in crawler PoC task |
+| Crawl | Crawl4AI/Firecrawl | L1/L2 candidate | UNKNOWN | ADAPTER | Candidate crawl interfaces | License, isolation, hosting and failure behavior | Compare in PoC, no dependency yet |
+| Browser fallback | Browser Use | L1/L2 candidate | REFERENCE | UI_REFERENCE | Browser automation pattern | Permission/isolation/nondeterminism | Security/PoC decision input |
+| Research loop | ODR/GPT Researcher/Deep Searcher | L1/L2 partial | REFERENCE | ALGORITHM_REFERENCE | Patterns and codebases exist | PI-owned evidence/citation semantics | Add algorithm reference note, no fork |
+| Discovery strategy | STORM/MindSearch/Alibaba family | L1/L2 partial | REFERENCE | ALGORITHM_REFERENCE | Strategy candidates | Ownership, stop thresholds, benchmark | M1 strategy ADR proposal |
+| Community connectors | SurfSense/REST/MCP | L1/L2 partial | UNKNOWN | ADAPTER | Connector patterns | Auth, terms, schema/security | Adapter contract review |
+| Queue/workflow | DB queue / Arq / RQ / Celery / Temporal-like | L1/L2 candidate | UNKNOWN | INFRASTRUCTURE_OPTION | Capability categories | Final Python stack, DB, durability, ops | Update ADR-001/005/006 after PoC |
+| Security | External sandbox + permission layer | L1/L2 partial | UNKNOWN | ADAPTER | Need is verified | Trust boundary and enforcement unproven | Update ADR-003 with security acceptance tests |
+| UI primitives | Morphic/Vane/DeerFlow/CC Switch | L0-L2 partial | REFERENCE | UI_REFERENCE | Patterns only | PI-owned UI and API boundary | M4 design/reference review |
 
 ## Cross-project comparison
 

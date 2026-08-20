@@ -1,12 +1,13 @@
 # HANDOFF
 
-Task: M0 Preparation after External Review — CHANGES_REQUESTED
+Task: Physical Architecture PoC — POC-001..012
 
 Repository: weiyang02520-ops/personal-intelligence
 Visibility: PUBLIC
 Branch: main
-External Review Baseline: 2b60b049630b02c1c9cfd37b0286638da2431bca
-Last Completed Checkpoint: bootstrap + blueprint audit + review handoff metadata
+External Review Baseline: bd12271c6e2cdc3a2e3e8fef440c47aaf86cfe82
+External Review Verdict: M0-GATE-001 PASS_WITH_NOTES
+Last Completed Checkpoint: M0 accepted with notes; PoC batch authorized
 Remote Verified At Baseline: YES
 
 ## Blueprint Audit
@@ -18,7 +19,7 @@ Reports are in `docs/audit/`:
 - `OPEN_TBDS.md`
 - `M0_READINESS.md`
 
-Result: `M0_EXTERNAL_REVIEW_REQUIRED`
+Result: `M0 COMPLETE_WITH_NOTES; POC IN PROGRESS`
 
 ## Agent Discovered Delta
 
@@ -31,13 +32,13 @@ Blueprint SHA256: `E6E282462AD7777EDCAD915000E0FD4F07E26C7E47A1E395E2AF70E7BB9D0
 
 Workflow SHA256: `40C6DBA5BE6A11A0082DF2A23AE4D9A8446D81C84946AA71C7094FE4BDCBB04D`
 
-## Current M0 preparation boundary
+## Current PoC boundary
 
-1. Execute only M0-001..014 audit/preparation work.
-2. M0 Task packet fields and canonical artifacts must be explicit.
-3. M0 Gate evidence must remain non-PASS until External Review.
-4. Audit conclusions may recommend ADR changes but must not accept architecture decisions implicitly.
+1. Execute only POC-001..012.
+2. PoC code may be simplified but contract semantics must be real.
+3. PoC evidence may propose architecture candidates but may not accept ADRs or Architecture Freeze.
+4. Stop at POC-GATE-001 External Review; do not enter M1.
 
 ## Next Action
 
-External ChatGPT review is required at M0-GATE-001; do not enter PoC or M1.
+External ChatGPT review is required at POC-GATE-001; do not enter M1.
