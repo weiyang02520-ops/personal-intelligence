@@ -1,0 +1,38 @@
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+secrets.json
+tokens.json
+cookies.json
+
+# Local data and runtime state
+*.sqlite
+*.sqlite3
+*.db
+*.local
+data/local/
+storage/local/
+
+# Build and tool output
+node_modules/
+dist/
+build/
+.next/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+coverage/
+
+# Local IDE / OS state
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
